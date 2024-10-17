@@ -58,5 +58,11 @@ class AppearanceResource(Resource):
         return new_appearance.to_dict(), 201
 
 
+api.add_resource(EpisodeListResource, "/episodes")
+api.add_resource(EpisodeResource, "/episodes/<int:id>")
+api.add_resource(GuestListResource, "/guests")
+api.add_resource(AppearanceResource, "/appearances")
+
+
 if __name__ == "__main__":
     app.run(port=5555, debug=True)
